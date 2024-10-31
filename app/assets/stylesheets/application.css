@@ -1,0 +1,39 @@
+body {
+  background-color: #ffff99; /* Bright yellow background */
+  color: #0000ff;            /* Electric blue text */
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+h1, h2, h3 {
+  color: #ff69b4;            /* Hot pink headers */
+}
+
+a {
+  color: #39ff14;            /* Neon green links */
+  text-decoration: none;
+}
+
+marquee {
+  font-weight: bold;
+  color: #ff00ff;            /* Another shade of bright pink for marquee */
+}
+
+button {
+  background-color: #00ff00; /* Bright green buttons */
+  border: 1px solid #000;
+}
+
+.tiled-background {
+  background-image: url('/assets/computer.gif'); 
+  background-repeat: repeat;
+  background-size: auto; 
+  padding: 20px;
+  min-height: 100vh; 
+}
+
+.tiled-background p {
+  color: #FFDD00; /* SpongeBob Yellow */
+  text-shadow: 3px 3px 6px rgba(0, 0, 128, 0.8); /* Dark blue shadow with increased size */
+}
+
+

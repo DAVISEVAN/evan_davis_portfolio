@@ -1,0 +1,24 @@
+<h2>Guestbook</h2>
+
+<!-- Container for GIF and Form -->
+<div style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 400px; margin: 0 auto;">
+
+  <!-- Phone GIF with the same width as the form -->
+  <img src="<%= asset_path 'phone.gif' %>" alt="Phone GIF" style="width: 100%; max-width: 400px;">
+
+  <!-- Guestbook Form -->
+  <form action="/guestbook" method="post" style="width: 100%; max-width: 400px;">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <br>
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <br>
+    <button type="submit">Sign the Guestbook</button>
+  </form>
+
+</div>

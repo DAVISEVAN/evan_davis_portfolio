@@ -1,0 +1,74 @@
+<!-- Flex container for audio, heading, and sticker GIFs -->
+<div style="display: flex; align-items: center; justify-content: space-between; margin-top: 20px; background-color: #ffff99;">
+  
+  <!-- Left sticker GIF -->
+  <img src="<%= asset_path 'sticker-left.gif' %>" alt="Left Sticker" style="background-color: #ffff99;">
+
+  <!-- Center audio and heading -->
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <audio id="background-audio" autoplay loop controls style="margin-right: 15px;">
+      <source src="<%= asset_path 'background-music.mp3' %>" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <h1>Welcome to Evan Davis' Portfolio</h1>
+  </div>
+
+  <!-- Right sticker GIF -->
+  <img src="<%= asset_path 'sticker-right.gif' %>" alt="Right Sticker" style="background-color: #ffff99;">
+</div>
+
+<!-- Center-align the rest of the introductory text -->
+<div style="text-align: center;">
+  <p>Hi there! I’m Evan Davis, a backend software engineer specializing in Ruby on Rails and data-driven solutions!</p>
+  <p>Welcome to my world of backend engineering! Below, you’ll find links to my projects and more. Enjoy Your Stay!</p>
+</div>
+
+<marquee>
+  <a href="<%= about_path %>" style="color: #800080;">About Me</a> |
+  <a href="<%= projects_path %>" style="color: #228B22;">Projects</a> |
+  <a href="<%= skills_path %>" style="color: #FF1493;">Skills</a> |
+  <a href="<%= guestbook_path %>" style="color: #1E90FF;">Guestbook</a> |
+  <a href="https://github.com/DAVISEVAN" style="color: #FFD700;">GitHub</a> |
+  <a href="https://www.linkedin.com/in/evan-davis-670069314/" style="color: #4682B4;">LinkedIn</a>
+</marquee>
+
+<div class="tiled-background">
+  <p>“A book must be the axe for the frozen sea within us.”</p>
+  <p>“I am a cage, in search of a bird.”</p>
+  <p>“Don’t bend; don’t water it down; don’t try to make it logical; don’t edit your own soul according to the fashion. Rather, follow your most intense obsessions mercilessly.”</p>
+  <p>“I am free and that is why I am lost.”</p>
+  <p>“I write differently from what I speak, I speak differently from what I think, I think differently from the way I ought to think, and so it all proceeds into deepest darkness.”</p>
+  <p>“I usually solve problems by letting them devour me.”</p>
+  <p>“In the fight between you and the world, back the world.”</p>
+  <p>“One of the first signs of the beginning of understanding is the wish to die.”</p>
+  <p>“It is often safer to be in chains than to be free.”</p>
+  <p>“Paths are made by walking.”</p>
+  <p>“By believing passionately in something that still does not exist, we create it. The nonexistent is whatever we have not sufficiently desired.”</p>
+  <p>“I am a liberator of the mind.”</p>
+  <p>“I have the true feeling of myself only when I am unbearably unhappy.”</p>
+  <p>“The meaning of life is that it stops.”</p>
+  <p>“You are free, and that is why you are lost.”</p>
+  <p>“I have spent all my life resisting the desire to end it.”</p>
+  <p>“A non-writing writer is a monster courting insanity.”</p>
+  <p>“Everything you love will probably be lost, but in the end, love will return in a different way.”</p>
+  <p>“All language is but a poor translation.”</p>
+  <p>“You can hold yourself back from the sufferings of the world, that is something you are free to do and it accords with your nature, but perhaps this very holding back is the one suffering you could avoid.”</p>
+  <p>“There are two main human sins from which all the others derive: impatience and indolence.”</p>
+  <p>“The history of mankind is the instant between two strides taken by a traveler.”</p>
+  <p>“You do not need to leave your room. Remain sitting at your table and listen. Do not even listen, simply wait, be quiet, still and solitary. The world will freely offer itself to you to be unmasked. It has no choice; it will roll in ecstasy at your feet.”</p>
+  <p>“It’s only because of their stupidity that they’re able to be so sure of themselves.”</p>
+  <p>“I cannot make you understand. I cannot make anyone understand what is happening inside me. I cannot even explain it to myself.”</p>
+  <p>“Start with what is right rather than what is acceptable.”</p>
+  <p>“I do not see the world at all; I invent it.”</p>
+  <p>“I think we ought to read only the kind of books that wound and stab us.”</p>
+  <p>“Better to have, and not need, than to need, and not have.”</p>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const audio = document.getElementById("background-audio");
+    audio.play().catch(error => {
+      console.log("Autoplay was prevented:", error);
+    });
+  });
+</script>
