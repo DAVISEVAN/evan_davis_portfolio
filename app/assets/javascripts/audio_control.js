@@ -2,22 +2,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const audio = document.getElementById("background-audio");
     const audioControl = document.getElementById("audio-control");
   
-    // Check localStorage for playback state and time
+    // Initialize with "Play Music" as the button text
+    audioControl.textContent = "Play Music";
+  
+    // Load playback state and time from localStorage
     const isPlaying = localStorage.getItem("audioPlaying") === "true";
     const currentTime = localStorage.getItem("audioTime") || 0;
   
-    // Set audio time to stored value and play if previously playing
+    // Set audio to stored time
     audio.currentTime = parseFloat(currentTime);
+  
+    // Start playback if previously playing
     if (isPlaying) {
       audio.play();
+      audioControl.textContent = "Pause Music"; // Button should show "Pause" if audio was playing
     }
   
-    // Update localStorage with current time during playback
+    // Update current time in localStorage during playback
     audio.addEventListener("timeupdate", () => {
       localStorage.setItem("audioTime", audio.currentTime);
     });
   
-    // Toggle play/pause state with the button
+    // Toggle play/pause state and button text when clicked
     audioControl.addEventListener("click", () => {
       if (audio.paused) {
         audio.play();
@@ -33,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Reset play state when audio ends
     audio.addEventListener("ended", () => {
       localStorage.setItem("audioPlaying", "false");
-      localStorage.removeItem("audioTime"); // Reset time at end
+      localStorage.removeItem("audioTime"); // Reset time when audio ends
       audioControl.textContent = "Play Music";
     });
   });
