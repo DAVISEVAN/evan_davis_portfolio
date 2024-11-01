@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>EvanDavisPortfolio</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>EvanDavisPortfolio</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", media: "all" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
 
-  <body>
-    <%= render 'layouts/navbar' %>
-    <body class="<%= "#{controller_name}-#{action_name}" %>">
-    <%= yield %> 
-  </body>
+<body>
+  <%= render 'layouts/navbar' %>
+  <%= render 'layouts/audio_player' %>
+
+  <%= yield %> 
+
+  <!-- Include JavaScript files -->
+  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+  <%= javascript_include_tag 'audio_control' %>
+</body>
 </html>
