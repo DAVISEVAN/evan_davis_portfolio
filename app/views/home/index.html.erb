@@ -67,8 +67,19 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const audio = document.getElementById("background-audio");
-    audio.play().catch(error => {
-      console.log("Autoplay was prevented:", error);
+    const storedTime = localStorage.getItem("audioTime");
+
+    // Set the audio to the stored time if it exists
+    if (storedTime) {
+      audio.currentTime = parseFloat(storedTime);
+    }
+
+    // Play the audio continuously
+    audio.play();
+
+    // Update localStorage with the current audio time every time it updates
+    audio.addEventListener("timeupdate", () => {
+      localStorage.setItem("audioTime", audio.currentTime);
     });
   });
 </script>

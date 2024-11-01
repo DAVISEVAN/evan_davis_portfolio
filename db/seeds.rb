@@ -1,9 +1,10 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+
+Project.create!(
+  title: "Guardian Angel",
+  description: "Guardian Angel is a full-stack web application designed to connect users to emergency mental health resources, including live access to helplines and crisis management support. Developed by a team of 7 using Agile methodologies, we organized our tasks on a project board and utilized Git Flow to ensure smooth collaboration and version control. \n\nMy key responsibility was creating a dedicated Sinatra microservice to manage external API calls, ensuring efficient, scalable data retrieval for mental health resources and helplines. This included parsing and normalizing data for the Rails backend and coordinating with front-end developers to provide a seamless user experience.\n\nTech Stack:\n- Ruby on Rails for main application logic and backend\n- Sinatra for the microservice API, handling external API data and caching\n- PostgreSQL as a robust, scalable database solution\n- HTML5, CSS3, JavaScript (ES6), and Bootstrap for responsive, accessible UI\n\nKey skills applied included effective communication across team roles, detailed documentation of the Sinatra service for ease of future development, and problem-solving to optimize API response times and ensure data accuracy."
+)
+
+Project.create!(
+  title: "Frien-emies",
+  description: "Frien-emies is a dynamic multiplayer chess application that enables real-time gameplay and seamless interaction across multiple devices, developed by an 11-person team. Leveraging Agile practices, we planned sprints and coordinated tasks using a project board, with Git Flow for organized version control. \n\nIn this project, I developed the Flask and Flask-SocketIO backend to handle live WebSocket interactions, manage game states, and provide reliable data synchronization. I worked closely with the front-end React team to ensure a smooth user experience for live chess matches and with the Rails backend team to manage user and game records.\n\nTech Stack:\n- Python with Flask and Flask-SocketIO to support real-time, multi-user gameplay\n- JavaScript (React) for a dynamic and responsive front end\n- Ruby on Rails for handling user authentication and storing game records\n- PostgreSQL as a scalable database solution\n\nSkills applied included collaborative problem-solving, managing stateful data, and using organizational practices such as Agile project boards and Git Flow for seamless teamwork. This project enhanced my adaptability and communication skills, ensuring smooth collaboration between the back-end and front-end teams."
+)

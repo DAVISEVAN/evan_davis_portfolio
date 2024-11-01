@@ -1,3 +1,4 @@
+/* Global body and element styles */
 body {
   background-color: #ffff99; /* Bright yellow background */
   color: #0000ff;            /* Electric blue text */
@@ -23,6 +24,7 @@ button {
   border: 1px solid #000;
 }
 
+/* Background for tiled section */
 .tiled-background {
   background-image: url('/assets/computer.gif'); 
   background-repeat: repeat;
@@ -36,4 +38,109 @@ button {
   text-shadow: 3px 3px 6px rgba(0, 0, 128, 0.8); /* Dark blue shadow with increased size */
 }
 
+/* Flashing border animation for project cards */
+@keyframes flash-border {
+  0% { border-color: #ff00ff; }    /* Pink */
+  25% { border-color: #39ff14; }   /* Neon Green */
+  50% { border-color: #1E90FF; }   /* Electric Blue */
+  75% { border-color: #FFD700; }   /* Gold */
+  100% { border-color: #ff00ff; }  /* Pink */
+}
 
+/* Styling for project card components */
+.project-card {
+  border: 4px solid;                /* Border width */
+  border-radius: 8px;               /* Rounded corners */
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  background-color: #8A2BE2;        /* Distinct background (blue violet) */
+  color: #FFFFFF;                   /* White text for legibility */
+  animation: flash-border 2s infinite; /* Apply the flashing border animation */
+}
+
+.project-link {
+  display: block;
+  margin-top: 10px;
+  color: #228B22;                   /* Dark green for contrast */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Container for project cards */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Keyframe animation for project show card flashing border */
+@keyframes show-border-flash {
+  0% { border-color: #FF4500; }    /* Orange Red */
+  25% { border-color: #32CD32; }   /* Lime Green */
+  50% { border-color: #1E90FF; }   /* Dodger Blue */
+  75% { border-color: #DA70D6; }   /* Orchid */
+  100% { border-color: #FF4500; }  /* Orange Red */
+}
+
+/* Styling for the project show page card */
+.project-show-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #F5DEB3;          /* Light golden background */
+  color: #333333;                     /* Dark gray text for readability */
+  border: 4px solid;                  /* Thick border for animation */
+  border-radius: 12px;
+  animation: show-border-flash 3s infinite; /* Flashing border animation */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  font-family: 'Comic Sans MS', sans-serif;    /* Retro font */
+  text-align: center;
+}
+
+/* Back link styling for show page */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #FF1493;                     /* Deep pink */
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 2px solid #FF1493;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link:hover {
+  background-color: #FF1493;
+  color: #FFFFFF;
+}
+
+/* Navbar styling */
+.navbar {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Comic Sans MS', sans-serif;
+  color: #ff00ff;               /* Bright pink */
+}
+
+/* Navbar styling similar to marquee */
+.navbar {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Comic Sans MS', sans-serif;
+  color: #ff00ff;
+  font-size: 1.2em;               /* Adjust font size to match marquee */
+}
+
+.navbar a {
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.navbar a:hover {
+  color: #ff69b4;               /* Hot pink on hover */
+}
