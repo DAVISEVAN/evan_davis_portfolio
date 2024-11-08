@@ -57,6 +57,9 @@ button {
   background-color: #8A2BE2;        /* Distinct background (blue violet) */
   color: #FFFFFF;                   /* White text for legibility */
   animation: flash-border 2s infinite; /* Apply the flashing border animation */
+  img{width: 100% ; 
+    height: auto;
+  }
 }
 
 .project-link {
