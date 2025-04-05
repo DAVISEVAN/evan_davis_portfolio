@@ -1,6 +1,6 @@
 /* Global body and element styles */
 body {
-  background-color: #ffff99; /* Bright yellow background */
+  background-color: #1e1e1e; 
   color: #0000ff;            /* Electric blue text */
   font-family: 'Comic Sans MS', sans-serif;
 }
@@ -156,4 +156,34 @@ button {
   border: 4px solid;                /* Border for flashing animation */
   animation: flash-border 2s infinite; /* Apply flashing border animation */
   background-color: #ffff99;        /* Match background color */
+}
+
+.quote {
+  animation: floatIn 1.2s ease;
+}
+
+@keyframes floatIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff; /* make text visible on dark bg */
+}
+
+a {
+  color: #56b6c2; /* VS Code's blue link color */
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
 }

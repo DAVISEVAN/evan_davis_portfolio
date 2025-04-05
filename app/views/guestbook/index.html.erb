@@ -1,24 +1,74 @@
+<% if flash[:alert] %>
+  <div style="position: fixed; top: 1rem; left: 50%; transform: translateX(-50%);
+              background: #f8d7da; color: #721c24; padding: 1rem 2rem;
+              border-radius: 8px; border: 1px solid #f5c6cb; z-index: 9999;">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+
 <!-- Container for GIF and Form -->
 <div style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 400px; margin: 0 auto;">
 
-  <!-- Phone GIF with the same width as the form -->
+  <!-- Phone GIF -->
   <img src="<%= asset_path 'phone.gif' %>" alt="Phone GIF" style="width: 100%; max-width: 400px;">
 
   <!-- Guestbook Form -->
-<form action="/guestbook" method="post" style="width: 100%; max-width: 400px;">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <div>
-    <label for="guestbook_entry_name">Name:</label>
-    <input type="text" id="guestbook_entry_name" name="guestbook_entry[name]" required>
-  </div>
-  <br>
-  <div>
-    <label for="guestbook_entry_message">Message:</label>
-    <textarea id="guestbook_entry_message" name="guestbook_entry[message]" required></textarea>
-  </div>
-  <br>
-  <button type="submit">Sign the Guestbook</button>
-</form>
+  <form action="/guestbook" method="post" style="width: 100%; max-width: 400px;">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div>
+      <label for="guestbook_entry_name">Name:</label>
+      <input type="text" id="guestbook_entry_name" name="guestbook_entry[name]" required>
+    </div>
+    <br>
+    <div>
+      <label for="guestbook_entry_message">Message:</label>
+      <textarea id="guestbook_entry_message" name="guestbook_entry[message]" required></textarea>
+    </div>
+    <br>
+    <button type="submit">Sign the Guestbook</button>
+  </form>
 
+  <!-- Display Messages Below -->
+  <div style="margin-top: 2rem; width: 100%;">
+    <% @entries.each do |entry| %>
+      <div style="margin: 10px auto; width: 100%; max-width: 400px;">
+      <%= link_to guestbook_entry_path(entry, admin_key: params[:admin_key]), style: "text-decoration: none;" do %>
+          <div style="
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            background-color: #000000;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+          " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <strong><%= entry.name %> signed the notebook on <%= entry.created_at.strftime("%B %d, %Y") %></strong>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+<!-- Floating Rune -->
+<div onclick="document.getElementById('wizard-password-form').style.left = '20px'" 
+     style="position: fixed; bottom: 20px; right: 20px; cursor: pointer; color: #aaa;">
+  🪄
+</div>
+
+<!-- Hidden Password Portal -->
+<div id="wizard-password-form" style="position: fixed; bottom: 60px; right: 20px; left: auto; display: none;">
+  <form action="/guestbook" method="get" style="background: #222; padding: 1rem; border-radius: 6px;">
+    <input type="password" name="admin_key" placeholder="Enter the secret spell..." />
+    <button type="submit">Unlock Magic</button>
+  </form>
+</div>
+
+<script>
+  document.querySelector("div[onclick]").addEventListener("click", () => {
+    const form = document.getElementById("wizard-password-form");
+    form.style.display = "block";
+  });
+</script>
 
