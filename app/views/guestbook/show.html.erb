@@ -1,0 +1,12 @@
+<div style="text-align: center; margin-top: 3rem;">
+
+  <h2>Guestbook Entry by <%= @entry.name %></h2>
+
+  <div style="padding: 1rem; border: 1px solid #ccc; border-radius: 8px; max-width: 500px; margin: 1.5rem auto; background-color: #111; color: #eee;">
+    <p><strong>Message:</strong></p>
+    <p><%= @entry.message %></p>
+  </div>
+
+  <%= link_to "← Back to Guestbook", guestbook_path, style: "color: #80bfff; text-decoration: none; font-weight: bold;" %>
+
+</div>
