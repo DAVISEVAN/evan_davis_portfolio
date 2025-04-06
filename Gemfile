@@ -50,6 +50,8 @@ gem "sidekiq-cron"
 
 gem "faraday"
 
+gem 'redis', '>= 4.0.1'
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
