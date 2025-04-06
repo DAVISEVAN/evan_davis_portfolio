@@ -5,7 +5,7 @@ class QuoteService
 
         {
             content: data["q"],
-            author data["a"]
+            author: data["a"]
         }
     rescue StandardEror => e 
         {
