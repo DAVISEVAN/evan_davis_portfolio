@@ -48,6 +48,8 @@ gem "sidekiq"
 
 gem "sidekiq-cron"
 
+gem "faraday"
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
