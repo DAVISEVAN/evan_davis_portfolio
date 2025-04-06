@@ -3,7 +3,10 @@ require 'sidekiq-cron'
 
 # Redis configuration for both client and server
 Sidekiq.configure_server do |config|
-  config.redis = { url: ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } }
+  config.redis = { 
+    url: ENV.fetch("REDIS_URL"),
+     ssl_params: { verify_mode: OpenSSL::SSL::VERIFY_NONE }
+    }
 
   # Cron Jobs
   Sidekiq::Cron::Job.create(
@@ -22,7 +25,10 @@ Sidekiq.configure_server do |config|
 end
 
 Sidekiq.configure_client do |config|
-  config.redis = { url: ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } }
+  config.redis = { 
+    url: ENV.fetch("REDIS_URL"), 
+    ssl_params: { verify_mode: OpenSSL::SSL::VERIFY_NONE }
+  }
 end
 
 Rails.application.config.after_initialize do 
